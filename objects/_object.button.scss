@@ -23,7 +23,7 @@ $Button: (
     Button-border-width: 1px,
     Button-color: palette(background),
     Button-disabled-opacity: 0.4,
-    Button-font: $font-text-bold,
+    Button-font: $font-text-medium,
     Button-height: map-fetch($button-height, base),
     Button-padding: 0 space(0.5)
 );
@@ -31,7 +31,6 @@ $Button: (
 @mixin buttonStyle() {
     @include baseTransition();
     @include typeReset();
-    @include textRg();
     background: transparent;
     border-color: map-fetch($Button, Button-border-color);
     border-radius: map-fetch($Button, Button-border-radius);
@@ -54,7 +53,7 @@ $Button: (
         background-color: palette(highlight-action);
         border-color: map-fetch($Button, Button-border-color);
         color: map-fetch($Button, Button-color);
-        font-family: map-fetch($Button, Button-font);
+        //font-family: map-fetch($Button, Button-font);
         outline: none !important;
         text-decoration: none;
     }
@@ -86,6 +85,7 @@ $Button: (
 
 
 // Primary button
+// 1. Added to account for Founders Grotesk line balance.
 // --------------------------------------------------------------------------
 
 //@mixin button() {
@@ -95,6 +95,9 @@ $Button: (
 
 .c-button {
     @include buttonStyle();
+    @include typeSize(text);
+    //color: palette(background);
+    padding-top: 5px !important; // 1.
 }
 
 .c-button--primary {
@@ -133,116 +136,6 @@ $Button: (
 
 
 
-// Btns for things
-// --------------------------------------------------------------------------
-
-.c-button--playHeroVideo {
-    @include on-event(true) {
-        background-color: transparent;
-        border-color: currentColor;
-        color: palette(white);
-        font-family: $font-text-bold;
-        line-height: space(2.5);
-    }
-    
-    > .o-icon {
-        vertical-align: text-bottom !important;
-        transform: translateY(2px);
-    }
-}
-
-.c-button--joinHeroVideo {
-    @include on-event(true) {
-        background-color: palette(white);
-        border-color: palette(white);
-        color: palette(highlight-action);
-        color: #ab6125;
-        font-family: $font-text-bold;
-        line-height: space(2.5);
-        margin-right: space(1);
-        min-width: 206px;
-    }
-}
-
-.c-button--giftAction {
-    @include buttonStyle();
-    @include headlineMd();
-    letter-spacing: 0.03em;
-    line-height: map-fetch($button-height, lg);
-    padding: 0 space(1.5);
-    text-transform: uppercase;
-    
-    @include on-event(true) {
-        background-color: palette(brand-aubergine-active);
-        border-color: palette(brand-aubergine-active);
-        color: palette(white);
-    }
-}
-
-
-//.t-button-registryStatus,
-//.c-button--inHero,
-//.c-button--editInHero {
-//    @include buttonStyle();
-//    border-width: 2px;
-//    padding: 0 space(1.5);
-//    
-//    @include on-event(true) {
-//        background-color: transparent;
-//        //background-color: rgba( palette(background), 1);
-//        //background-color: rgba( palette(highlight-action), 0.2);
-//        border-color: palette(highlight-action);
-//        border-color: currentColor;
-//        color: palette(highlight-action);
-//    }
-//    
-//    &.is-archived {
-//        @include on-event(true) {
-//            background-color: transparent;
-//            //background-color: rgba( palette(background), 1);
-//            //background-color: rgba( palette(highlight-action), 0.2);
-//            border-color: palette(highlight-action);
-//            border-color: currentColor;
-//            color: palette(highlight-action);
-//            cursor: default;
-//        }
-//    }
-//}
-
-//.c-button--draftInHero,
-//.c-button--archiveInHero {
-//    @include buttonStyle();
-//    padding: 0 space(1.5);
-//}
-//    
-//.c-button--draft {
-//    @include on-event(true) {
-//        color: palette(highlight-action-dark);
-//    }
-//}
-
-//.c-button--draftInHero {
-//    @include on-event(true) {
-//        background-color: palette(highlight-action-dark);
-//        border-color: palette(highlight-action-dark);
-//        color: palette("black-10");
-//        cursor: default;
-//        //font-family: $font-text-regular;
-//    }
-//}
-
-//.c-button--archiveInHero {
-//    @include on-event(true) {
-//        background-color: palette(brand-complement);
-//        border-color: palette(brand-complement);
-//        color: palette("black-10");
-//        cursor: default;
-//        //font-family: $font-text-regular;
-//    }
-//}
-
-
-
 // Btn colors
 // --------------------------------------------------------------------------
 
@@ -250,7 +143,7 @@ $Button: (
     @include on-event(true) {
         background-color: transparent;
         border-color: transparent;
-        color: palette("black-40");
+        color: palette(black-40);
         font-family: $font-text-medium;
     }
     
@@ -284,37 +177,6 @@ $Button: (
 
 
 
-
-// Ticket button
-// --------------------------------------------------------------------------
-
-$arrowSize: map-fetch($button-height, base);
-
-@mixin Arrow() {
-    content: "";
-    display: block;
-    position: absolute;
-    //right: -#{$arrowSize * 0.5};
-    right: -23px;
-    top: -1px;
-
-}
-
-/* uncss:ignore */
-.t-button--primary {
-    @include buttonStyle();
-    min-width: 92%;
-    padding: space(0.25) space(0.25) space(0.25) space(0.5);
-    position: relative;
-
-    &:after {
-        @include Arrow();
-        border-bottom: 59px solid transparent;
-        border-left: $arrowSize * 0.5 solid palette(brand);
-    }
-}
-
-
 // Close button (this just positions an icon)
 // --------------------------------------------------------------------------
 
@@ -333,13 +195,4 @@ $arrowSize: map-fetch($button-height, base);
         right: space(1);
         top: 31px;
     }
-}
-
-
-// Keystone editable button
-// --------------------------------------------------------------------------
-
-.ks-editable-btn {
-    top: space(0.5) !important;
-    right: space(0.5) !important;
 }
