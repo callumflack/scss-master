@@ -25,9 +25,7 @@
     text-align: left;
 
     // sizes
-    font-size: fontsize($mixinSize, xs);
-    @include media-breakpoint-up(sm) { font-size: fontsize($mixinSize, sm); }
-    @include media-breakpoint-up(xl) { font-size: fontsize($mixinSize, lg); }
+    @include typeSize($mixinSize);
 
     // children
     > li,

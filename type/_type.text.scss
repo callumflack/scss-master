@@ -2,33 +2,11 @@
 
 // --------------------------------------------------------------------------
 //   TEXT TYPOGRAPHY
+//   PS: https://blog.codepen.io/2016/10/31/fluid-type-blogs/ ?
 // --------------------------------------------------------------------------
 
 
 // Common theme…
-
-// PS: https://blog.codepen.io/2016/10/31/fluid-type-blogs/
-
-// A note on mixin parameters.
-// Required parameters must preced optional parameters.
-// To use parameter 4, you must have a value for each
-// preceding required parameter. Or list the parameter
-// value after it's key name (like below).
-// @mixin textSm() {
-// 	@include textTemplate(
-// 		Text--sm,
-// 		$mixinLetterSpacing: 0.01em
-// 	);
-// }
-
-@mixin textSize(
-    $mixinTextSize: text
-) {
-    font-size: fontsize($mixinTextSize, xs);
-    @include media-breakpoint-up(sm) { font-size: fontsize($mixinTextSize, sm); }
-    @include media-breakpoint-up(xl) { font-size: fontsize($mixinTextSize, rg); }
-
-}
 
 @mixin textTemplate(
     $mixinSize: text,
@@ -45,7 +23,7 @@
     line-height: $mixinLineHeight;
 
     // sizes
-    @include textSize($mixinSize);
+    @include typeSize($mixinSize);
     //font-size: fontsize($mixinSize, xs);
     //@include media-breakpoint-up(sm) { font-size: fontsize($mixinSize, sm); }
     //@include media-breakpoint-up(xl) { font-size: fontsize($mixinSize, rg); }
