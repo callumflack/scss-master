@@ -11,3 +11,11 @@ Needs a build tool, but none attached here. Use [this](https://github.com/callum
 An `.editorconfig` is included. Use it to avoid dumb-ass whitespace commits, etc.
 
 A `.gitignore` is also included.
+
+# TODO
+- [ ] use npm to bring in SuitCSS and bundle it into separate file
+- [ ] keep up with new Suits: 
+    - https://github.com/simonsmith/suitcss-utils-image
+    - https://github.com/simonsmith/suitcss-utils-lists
+    - https://github.com/simonsmith/suitcss-components-form-field
+- [ ] review: https://csswizardry.com/2012/06/single-direction-margin-declarations/
