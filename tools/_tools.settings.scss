@@ -83,9 +83,11 @@ $base-line-height              : ($base-font-size-unit * $base-line-height-unit)
 $space-unit                    : $base-line-height;
 $space                         : $space-unit * 1;
 
-$gutterSpace                   : space(0.75);
 $paragraphSpace                : space(0.75);
+$gutterSpace                   : space(0.75);
 $blockSpace                    : 7vh; //5.5vh;
+$windowSpace                   : 7.03125%;
+$windowSpaceLg                 : 13.67188%;
 
 $cardRadius                    : 6px;
 $buttonRadius                  : 4px;
@@ -134,58 +136,58 @@ $container-max-widths: (
 
 $fontsizes: (
     text--xs: (
-        xs            : 10px,
-        sm            : 11px,
-        rg            : 13px
+        sm            : 10px,
+        rg            : 11px,
+        lg            : 13px
     ),
     text--sm: (
-        xs            : 12px,
-        sm            : 13px,
-        rg            : 14px
+        sm            : 12px,
+        rg            : 13px,
+        lg            : 14px
     ),
     text--meta: (
-        xs            : 11px,
-        sm            : 13px,
-        rg            : 15px
+        sm            : 11px,
+        rg            : 13px,
+        lg            : 15px
     ),
     text: (
-        xs            : 14px,
         sm            : 15px,
-        rg            : 16px
+        rg            : 17px,
+        lg            : 19px
     ),
     text--lg: (
-        xs            : 18px,
-        sm            : 20px,
-        lg            : 21px
+        sm            : 18px,
+        rg            : 21px,
+        lg            : 24px
     ),
     headline--xs: (
-        xs            : 21px,
-        sm            : 24px,
+        sm            : 21px,
+        rg            : 24px,
         lg            : 27px
     ),
     headline--sm: (
-        xs            : 17px,
-        sm            : 19px,
-        lg            : 20px
+        sm            : 18px,
+        rg            : 21px,
+        lg            : 24px
     ),
     headline--md: (
-        xs            : 20px,
-        sm            : 22px,
+        sm            : 20px,
+        rg            : 22px,
         lg            : 25px
     ),
     headline: (
-        xs            : 22px,
-        sm            : 29px,
+        sm            : 27px,
+        rg            : 31px,
         lg            : 36px
     ),
     headline--lg: (
-        xs            : 27px,
-        sm            : 34px,
-        lg            : 42px
+        sm            : 40px,
+        rg            : 48px,
+        lg            : 60px
     ),
     display: (
-        xs            : 40px,
-        sm            : 54px,
+        sm            : 40px,
+        rg            : 54px,
         lg            : 60px
     )
 );
