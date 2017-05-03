@@ -243,7 +243,8 @@
 
 // Custom file input
 // https://v4-alpha.getbootstrap.com/components/forms/#file-browser
-// --------------------------------------------------------------------------
+
+$customFormHeight: map-fetch($button-height, base);
 
 .custom-file-wrapper {
     //margin-left: space(1);
@@ -253,14 +254,16 @@
     position: relative;
     display: inline-block;
     max-width: 100%;
-    height: 2.5rem;
+    //height: 2.5rem;
+    height: $customFormHeight;
     margin-bottom: 0;
     cursor: pointer;
 }
 
 .custom-file-input {
     cursor: pointer;
-    height: 2.5rem;
+    //height: 2.5rem;
+    height: inherit;
     filter: alpha(opacity=0);
     margin: 0;
     max-width: 100%;
@@ -271,13 +274,15 @@
 .custom-file-control {
     @include textRg();
     //background-color: #fff;
-    border: 1px solid palette(black-20);
+    border: 1px solid palette("border-dark");
     border-radius: .25rem;
     color: #464a4c;
-    height: 2.5rem;
+    //height: 2.5rem;
+    height: inherit;
     left: 0;
-    line-height: 1.5;
-    padding: .5rem 1rem;
+    //line-height: 1.5;
+    line-height: $customFormHeight;
+    padding: 0 1rem;
     pointer-events: none;
     position: absolute;
     right: 0;
@@ -286,7 +291,7 @@
     z-index: 5;
     
     &:before {
-        background-color: palette('black-5');
+        background-color: palette("black-5");
         border: 1px solid rgba(0,0,0,.15);
         border-radius: 0 .25rem .25rem 0;
         bottom: -1px;
@@ -294,9 +299,10 @@
         content: "Browse";
         display: block;
         font-family: $font-text-medium;
-        height: 2.5rem;
-        line-height: 1.5;
-        padding: .5rem 1rem;
+        height: inherit;
+        //line-height: 1.5;
+        line-height: $customFormHeight;
+        padding: 0 1rem;
         position: absolute;
         right: -1px;
         top: -1px;
@@ -307,7 +313,6 @@
         content: "Choose file…";
     }
 }
-
 //.custom-file-control:lang(en)::before {
 //    content: "Browse";
 //}
